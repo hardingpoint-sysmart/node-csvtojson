@@ -1,12 +1,12 @@
 {
-  "name": "csvtojson",
+  "name": "node-csvtojson",
   "description": "A tool concentrating on converting csv data to JSON with customised parser supporting",
   "author": "Keyang Xiang <keyang.xiang@gmail.com>",
   "homepage": "https://github.com/Keyang/node-csvtojson",
   "bugs": "https://github.com/Keyang/node-csvtojson/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Keyang/node-csvtojson.git"
+    "url": "https://github.com/hardingpoint-sysmart/node-csvtojson.git"
   },
   "contributors": [
     {
