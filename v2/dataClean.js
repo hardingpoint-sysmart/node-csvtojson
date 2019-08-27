@@ -11,15 +11,29 @@ var strip_bom_1 = __importDefault(require("strip-bom"));
  * 3. stripBom
  */
 function prepareData(chunk, runtime) {
+    if( !runtime.decoder ){
+        runtime.decoder = new StringDecoder('utf8');
+    }
     var workChunk = concatLeftChunk(chunk, runtime);
     runtime.csvLineBuffer = undefined;
-    var cleanCSVString = cleanUtf8Split(workChunk, runtime).toString("utf8");
+    
+    var cleanCSVString = decoder.write(workChunk);
     if (runtime.started === false) {
         return strip_bom_1.default(cleanCSVString);
     }
     else {
         return cleanCSVString;
-    }
+    } 
+
+    // var workChunk = concatLeftChunk(chunk, runtime);
+    // runtime.csvLineBuffer = undefined;
+    // var cleanCSVString = cleanUtf8Split(workChunk, runtime).toString("utf8");
+    // if (runtime.started === false) {
+    //     return strip_bom_1.default(cleanCSVString);
+    // }
+    // else {
+    //     return cleanCSVString;
+    // }
 }
 exports.prepareData = prepareData;
 /**
