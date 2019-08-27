@@ -4,6 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var strip_bom_1 = __importDefault(require("strip-bom"));
+var StringDecoder = require('string_decoder').StringDecoder;
+
 /**
  * For each data chunk coming to parser:
  * 1. append the data to the buffer that is left from last chunk
