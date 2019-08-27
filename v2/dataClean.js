@@ -19,7 +19,7 @@ function prepareData(chunk, runtime) {
     var workChunk = concatLeftChunk(chunk, runtime);
     runtime.csvLineBuffer = undefined;
     
-    var cleanCSVString = decoder.write(workChunk);
+    var cleanCSVString = runtime.decoder.write(workChunk);
     if (runtime.started === false) {
         return strip_bom_1.default(cleanCSVString);
     }
